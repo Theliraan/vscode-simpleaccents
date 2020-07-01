@@ -2,7 +2,8 @@
 	"name": "simpleaccents",
 	"displayName": "Simple Accents",
 	"description": "Simple accent applier for technical writers and artistic text creators",
-	"version": "0.1.0",
+	"version": "1.0.0",
+	"publisher": "theliraan",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
@@ -90,10 +91,5 @@
 	},
 	"bugs": {
 		"url": "https://github.com/theliraan/vscode-simpleaccents/issues"
-	},
-	"__metadata": {
-		"id": "",
-		"publisherId": "",
-		"publisherDisplayName": "Alexander «Theliraan» Lazarev"
 	}
 }
