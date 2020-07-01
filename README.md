@@ -1,65 +1,64 @@
-# simpleaccents README
+# Simple Accents for VSCode
 
-This is the README for your extension "simpleaccents". After writing up a brief description, we recommend including the following sections.
+Simple accent applier for technical writers and artistic text creators.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Allows to apply and remove accents on symbols.
 
-For example if there is an image subfolder under your extension project workspace:
+## Install
 
-\!\[feature X\]\(images/feature-x.png\)
+* Open **VSCode**
+* Press **Ctrl+Shift+X** to open **Extensions** tab
+* Find **Simple Accents** in marketplace
+* Press **Install**
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+* Select text block or single symbol to accentuate
+* Press **Ctrl+Alt+A** to apply accents
+* Press **Ctrl+Alt+D** to remove accents
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+![Usage example](https://user-images.githubusercontent.com/3195612/86149811-25b3ea80-bb05-11ea-86d5-4f2dabda7eef.gif)
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Replace symbols can be customized:
 
-For example:
+* `simpleaccents.symbolsToReplace`: array of string pairs with source-target replace symbols
+    ```json
+    "simpleaccents.symbolsToReplace": [
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+        // Latin vowels
+        [ "A", "Á" ],
+        [ "a", "á" ],
+        [ "E", "É" ],
+        [ "e", "é" ],
+        [ "I", "Í" ],
+        [ "i", "í" ],
+        [ "O", "Ó" ],
+        [ "o", "ó" ],
+        [ "U", "Ú" ],
+        [ "u", "ú" ],
+        [ "Y", "Ý" ],
+        [ "y", "ý" ],
+        
+        // Special symbols
+        [ "-", "—" ],
+        [ "\"", "«»" ]
+    ]
+    ```
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* No umlaut or other special accents support via extended replace list. Example:
+```json
+[ "a", "á", "ä", "â", ... ]
+```
+* No open/close quotes auto detect
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
+## Release notes
 
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of simpleaccents in Visual Studio Code marketplace

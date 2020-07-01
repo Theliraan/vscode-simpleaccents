@@ -2,8 +2,6 @@
 
 All notable changes to the "simpleaccents" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [1.0.0] - 2020-07-01
 
-## [Unreleased]
-
-- Initial release
+- Added base functional of Simple Accents extension for Visual Studio Code
