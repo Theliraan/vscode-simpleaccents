@@ -21,7 +21,7 @@ Allows to apply and remove accents on symbols.
 
 ![Usage example](https://user-images.githubusercontent.com/3195612/86149811-25b3ea80-bb05-11ea-86d5-4f2dabda7eef.gif)
 
-## Extension Settings
+## Settings
 
 Replace symbols can be customized:
 
@@ -47,10 +47,11 @@ Replace symbols can be customized:
     ]
     ```
 
-## Known Issues
+## Known Issues and TODO
 
 * No open/close quotes auto detect
 * No umlaut or other special accents support via extended replace list. Example: ``` [ "a", "á", "ä", "â", ... ] ```
+* No extension icon
 
 ## Release notes
 
