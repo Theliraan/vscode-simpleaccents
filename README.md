@@ -28,8 +28,10 @@ Replace symbols can be customized:
 * `simpleaccents.symbolsToReplace`: array of string pairs with source-target replace symbols
     ```json
     "simpleaccents.symbolsToReplace": [
+        
+        [ "-", "—" ],
+        [ "\"", "«»" ],
 
-        // Latin vowels
         [ "A", "Á" ],
         [ "a", "á" ],
         [ "E", "É" ],
@@ -41,21 +43,14 @@ Replace symbols can be customized:
         [ "U", "Ú" ],
         [ "u", "ú" ],
         [ "Y", "Ý" ],
-        [ "y", "ý" ],
-        
-        // Special symbols
-        [ "-", "—" ],
-        [ "\"", "«»" ]
+        [ "y", "ý" ]
     ]
     ```
 
 ## Known Issues
 
-* No umlaut or other special accents support via extended replace list. Example:
-```json
-[ "a", "á", "ä", "â", ... ]
-```
 * No open/close quotes auto detect
+* No umlaut or other special accents support via extended replace list. Example: ``` [ "a", "á", "ä", "â", ... ] ```
 
 ## Release notes
 
