@@ -1,3 +1,5 @@
+export const settingsKey: string = 'simpleaccents.symbolsToReplace';
+
 export const symbols: Array<[string, string]> =
 [
 	// Cyrillic

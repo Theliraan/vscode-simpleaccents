@@ -1,7 +1,7 @@
 {
 	"name": "simpleaccents",
 	"displayName": "Simple Accents",
-	"description": "Simple accent applier for your texts",
+	"description": "Simple accent applier for technical writers and artistic text creators",
 	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.46.0"
@@ -23,7 +23,8 @@
 	],
 	"activationEvents": [
 		"onCommand:simpleaccents.accentuate",
-		"onCommand:simpleaccents.deaccentuate"
+		"onCommand:simpleaccents.deaccentuate",
+		"onCommand:simpleaccents.restoreDefaultSettings"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -35,6 +36,10 @@
 			{
 				"command": "simpleaccents.deaccentuate",
 				"title": "%simpleaccents.commands.deaccentuate.title%"
+			},
+			{
+				"command": "simpleaccents.restoreDefaultSettings",
+				"title": "%simpleaccents.commands.restoreDefaultSettings.title%"
 			}
 		],
 		"keybindings": [
@@ -89,6 +94,6 @@
 	"__metadata": {
 		"id": "",
 		"publisherId": "",
-		"publisherDisplayName": "Alexander 'Theliraan' Lazarev"
+		"publisherDisplayName": "Alexander «Theliraan» Lazarev"
 	}
 }

@@ -1,4 +1,5 @@
 {
     "simpleaccents.commands.accentuate.title": "SimpleAccents: Добавить акценты",
-    "simpleaccents.commands.deaccentuate.title": "SimpleAccents: Убрать акценты"
+    "simpleaccents.commands.deaccentuate.title": "SimpleAccents: Убрать акценты",
+    "simpleaccents.commands.restoreDefaultSettings.title": "SimpleAccents: Восстановить настройки по умолчанию"
 }
