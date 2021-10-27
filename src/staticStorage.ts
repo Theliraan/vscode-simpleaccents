@@ -1,4 +1,4 @@
-export const settingskey: string = "simpleaccents.symbolsToReplace";
+export const settingsKey: string = "simpleaccents.symbolsToReplace";
 
 export type Replacer = { source: string; target: string };
 

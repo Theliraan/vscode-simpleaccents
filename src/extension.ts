@@ -1,6 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import * as vscode from "vscode";
+import { window, workspace, ExtensionContext, commands } from "vscode";
 import * as staticStorage from "./staticStorage";
 import { Cycle, Replacer } from "./staticStorage";
 
@@ -34,7 +34,7 @@ function accentuateText(
  * @param accentuate Apply or remove accents
  */
 async function accentuateSelected(accentuate: boolean = true) {
-    const editor = vscode.window.activeTextEditor;
+    const editor = window.activeTextEditor;
     if (!editor) {
         return;
     }
@@ -44,15 +44,12 @@ async function accentuateSelected(accentuate: boolean = true) {
         return;
     }
 
-// DEBUG for testing without restarting
-loadReplacementArray();
-
     const accentuatedText = accentuateText(
         editor.document.getText(selection),
         replaceArray,
         accentuate
     );
-    await editor.edit((edit) => edit.replace(selection, accentuatedText));
+    await editor.edit((edit: any) => edit.replace(selection, accentuatedText));
 
     console.log("simpleaccents: accentuated, direction: " + accentuate);
 }
@@ -61,9 +58,9 @@ loadReplacementArray();
  * Restore default json settings
  */
 function restoreDefaultSettings(): void {
-    vscode.workspace
+    workspace
         .getConfiguration()
-        .update(staticStorage.settingsKey, staticStorage.symbols);
+        .update(staticStorage.settingsKey, staticStorage.symbolCycles);
     console.log("simpleaccents: default settings restored");
 }
 
@@ -71,24 +68,24 @@ function restoreDefaultSettings(): void {
  * Entry point
  * @param context VSCode context object
  */
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
     loadReplacementArray();
 
-    const accentuateCommand = vscode.commands.registerCommand(
+    const accentuateCommand = commands.registerCommand(
         "simpleaccents.accentuate",
         async () => {
             await accentuateSelected(true);
         }
     );
 
-    const deaccentuateCommand = vscode.commands.registerCommand(
+    const deaccentuateCommand = commands.registerCommand(
         "simpleaccents.deaccentuate",
         async () => {
             await accentuateSelected(false);
         }
     );
 
-    const restoreDefaultSettingsCommand = vscode.commands.registerCommand(
+    const restoreDefaultSettingsCommand = commands.registerCommand(
         "simpleaccents.restoreDefaultSettings",
         () => {
             restoreDefaultSettings();
@@ -111,7 +108,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 function loadReplacementArray(): void {
 	replaceArray = convertCycleToReplacer(
-        vscode.workspace
+        workspace
             .getConfiguration()
             .get(staticStorage.settingsKey, staticStorage.symbolCycles)
     );
