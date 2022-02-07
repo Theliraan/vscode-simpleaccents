@@ -6,13 +6,13 @@ export type Replacer = { source: string; target: string };
  * are single characters (e.g. a to á), but must be
  * an array if any of the replacers are multiple
  * characters (e.g. - to -- )
- * 
  */
 export type Cycle = {
     key: string;
     cycle:  string | Array<string>;
 };
 export const symbolCycles: Array<Cycle> = [
+    // latin lower
     { key: "a", cycle:  "áàāâãäåą" },
     { key: "b", cycle:  "ßƀƃƅ" },
     { key: "c", cycle:  "çćċč" },
@@ -37,7 +37,7 @@ export const symbolCycles: Array<Cycle> = [
     { key: "Dz", cycle:  "ǲǅ" },
     { key: "ae", cycle:  "æǽǣ" },
 
-	// upper
+	// latin upper
     { key: "A", cycle:  "ÁÀĀÂÃÄÅĄ" },
     { key: "B", cycle:  "SSɃƂƄ" },
     { key: "C", cycle:  "ÇĆĊČ" },
@@ -59,28 +59,29 @@ export const symbolCycles: Array<Cycle> = [
     { key: "Y", cycle:  "Ŷ" },
     { key: "Z", cycle:  "ŹŻŽȤⱿ" },
     { key: "DZ", cycle:  "ǱǄ" },
-    { key: "DZ", cycle:  "ǱǄ" },
     { key: "AE", cycle:  "ÆǼǢ" },	
 
-    // cyrillic
-    { key: "А", cycle:  "А́" },
-    { key: "а", cycle:  "а́" },
-    { key: "Е", cycle:  "Е́" },
-    { key: "е", cycle:  "е́" },
-    { key: "И", cycle:  "И́" },
-    { key: "и", cycle:  "и́" },
-    { key: "О", cycle:  "О́" },
-    { key: "о", cycle:  "о́" },
-    { key: "У", cycle:  "У́" },
-    { key: "у", cycle:  "у́" },
-    { key: "Ы", cycle:  "Ы́" },
-    { key: "ы", cycle:  "ы́" },
-    { key: "Э", cycle:  "Э́" },
-    { key: "э", cycle:  "э́" },
-    { key: "Ю", cycle:  "Ю́" },
-    { key: "ю", cycle:  "ю́" },
-    { key: "Я", cycle:  "Я́" },
-    { key: "я", cycle:  "я́" },
+    // cyrillic lower
+    { key: "А", cycle:  [ "А́" ] },
+    { key: "Е", cycle:  [ "Е́" ] },
+    { key: "И", cycle:  [ "И́" ] },
+    { key: "О", cycle:  [ "О́" ] },
+    { key: "У", cycle:  [ "У́" ] },
+    { key: "Ы", cycle:  [ "Ы́" ] },
+    { key: "Э", cycle:  [ "Э́" ] },
+    { key: "Ю", cycle:  [ "Ю́" ] },
+    { key: "Я", cycle:  [ "Я́" ] },
+
+    // cyrillic upper
+    { key: "а", cycle:  [ "а́" ] },
+    { key: "е", cycle:  [ "е́" ] },
+    { key: "и", cycle:  [ "и́" ] },
+    { key: "о", cycle:  [ "о́" ] },
+    { key: "у", cycle:  [ "у́" ] },
+    { key: "ы", cycle:  [ "ы́" ] },
+    { key: "э", cycle:  [ "э́" ] },
+    { key: "ю", cycle:  [ "ю́" ] },
+    { key: "я", cycle:  [ "я́" ] },
 
     // special
 	{ key: "--", cycle:  [ "–", "—" ] },
