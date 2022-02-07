@@ -2,9 +2,13 @@
 
 Simple accent applier for technical writers and artistic text creators.
 
+## Thanks to contributors
+
+* [Graham Charles](https://github.com/grahampcharles): Variable accent type through the cycle
+
 ## Features
 
-Allows to apply and remove accents on symbols.
+* Allows to apply, variate and remove symbol accents.
 
 ## Install
 
