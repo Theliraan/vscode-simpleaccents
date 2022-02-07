@@ -2,8 +2,9 @@
 	"name": "simpleaccents",
 	"displayName": "Simple Accents",
 	"description": "Simple accent applier for technical writers and artistic text creators",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "theliraan",
+	"contributors": [ "GrahamCharles" ],
 	"engines": {
 		"vscode": "^1.46.0"
 	},

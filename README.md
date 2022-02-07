@@ -17,6 +17,7 @@ Allows to apply and remove accents on symbols.
 
 * Select text block or single symbol to accentuate
 * Press **Ctrl+Alt+A** to apply accents
+* Continue to press **Ctrl+Alt+A** to cycle through available modified forms of each letter.
 * Press **Ctrl+Alt+D** to remove accents
 
 ![Usage example](https://user-images.githubusercontent.com/3195612/86149811-25b3ea80-bb05-11ea-86d5-4f2dabda7eef.gif)
@@ -25,32 +26,22 @@ Allows to apply and remove accents on symbols.
 
 Replace symbols can be customized:
 
-* `simpleaccents.symbolsToReplace`: array of string pairs with source-target replace symbols
+* `simpleaccents.symbolCycles`: Array of cycle objects pairing a key (the replacement source) with any number of target symbols. (To use multi-character replacement symbols, provide an array of strings for the cycle property.)
     ```json
-    "simpleaccents.symbolsToReplace": [
-        
-        [ "-", "—" ],
-        [ "\"", "«»" ],
-
-        [ "A", "Á" ],
-        [ "a", "á" ],
-        [ "E", "É" ],
-        [ "e", "é" ],
-        [ "I", "Í" ],
-        [ "i", "í" ],
-        [ "O", "Ó" ],
-        [ "o", "ó" ],
-        [ "U", "Ú" ],
-        [ "u", "ú" ],
-        [ "Y", "Ý" ],
-        [ "y", "ý" ]
+    "simpleaccents.symbolCycles": 
+    [   { "key": "a", "cycle":  "áàāâãäåą" },
+        { "key": "b", "cycle":  "ßƀƃƅ" },
+        { "key": "c", "cycle":  "çćċč" },
+        { "key": "d", "cycle":  "ďđ" },
+        { "key": "e", "cycle":  "èéêëēĕėęěȅȇȩə" },
+        { "key": "g", "cycle":  "ĝğġģǥǧ" },
+        { "key": "--", "cycle":  [ "–", "—" ] },
     ]
     ```
 
 ## Known Issues and TODO
 
 * No open/close quotes auto detect
-* No umlaut or other special accents support via extended replace list. Example: ``` [ "a", "á", "ä", "â", ... ] ```
 * No extension icon
 
 ## Release notes
