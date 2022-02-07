@@ -45,10 +45,15 @@ Replace symbols can be customized:
 
 ## Known Issues and TODO
 
+* **Cycle might be unstable on your rare symbols in "cycle" value. To avoid this problem, use array definition instead. Example: "cycle":  ["á", "à", ... ]**
 * No open/close quotes auto detect
 * No extension icon
 
 ## Release notes
+
+### 1.1.0
+
+Added variable cycling diacritics
 
 ### 1.0.0
 
